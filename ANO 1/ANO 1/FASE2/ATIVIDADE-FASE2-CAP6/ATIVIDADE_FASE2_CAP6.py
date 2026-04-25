@@ -1,22 +1,33 @@
 import json
 
+TIPOS_VALIDOS = ("manual", "mecanica")
+
 colheitas = []
 
 def cadastrar_colheita():
-    nome = input("Nome da fazenda: ")
+    nome = input("Nome da fazenda: ").strip()
 
     tipo = input("Tipo de colheita (manual/mecanica): ").lower()
-    while tipo not in ["manual", "mecanica"]:
-        tipo = input("Digite 'manual' ou 'mecanica': ")
+    while tipo not in TIPOS_VALIDOS:
+        tipo = input("Digite 'manual' ou 'mecanica': ").lower()
 
     try:
         producao_esperada = float(input("Produção esperada (ton): "))
         producao_real = float(input("Produção real (ton): "))
+
+        if producao_esperada < 0 or producao_real < 0:
+            print("Erro: valores não podem ser negativos!")
+            return
+
     except:
         print("Erro: digite números válidos!")
         return
 
     perda = calcular_perda(producao_esperada, producao_real)
+
+
+    if perda > 10:
+        print("Atenção: perda acima de 10%!")
 
     colheita = {
         "nome": nome,
@@ -30,30 +41,38 @@ def cadastrar_colheita():
     print("Colheita cadastrada com sucesso!\n")
 
 
-
 def calcular_perda(esperado, real):
+    # Evita divisão por zero
+    if esperado == 0:
+        return 0
+
     perda = ((esperado - real) / esperado) * 100
     return round(perda, 2)
 
 
-
 def mostrar_dados():
     if not colheitas:
-        print("Nenhuma colheita cadastrada.")
+        print("\nNenhuma colheita cadastrada.\n")
         return
 
-    for c in colheitas:
-        print("\n--- COLHEITA ---")
+    print("\n=== DADOS DAS COLHEITAS ===")
+
+    for i, c in enumerate(colheitas, 1):
+        print(f"\nColheita {i}")
         print(f"Fazenda: {c['nome']}")
         print(f"Tipo: {c['tipo']}")
+        print(f"Produção esperada: {c['esperado']} ton")
+        print(f"Produção real: {c['real']} ton")
         print(f"Perda: {c['perda_percentual']}%")
 
 
-
 def salvar_json():
-    with open("colheitas.json", "w") as f:
-        json.dump(colheitas, f, indent=4)
-    print("Dados salvos em JSON!")
+    try:
+        with open("colheitas.json", "w") as f:
+            json.dump(colheitas, f, indent=4)
+        print("Dados salvos em JSON!")
+    except:
+        print("Erro ao salvar arquivo.")
 
 
 def carregar_json():
@@ -61,12 +80,15 @@ def carregar_json():
     try:
         with open("colheitas.json", "r") as f:
             colheitas = json.load(f)
-        print("Dados carregados!")
     except:
-        print("Arquivo não encontrado.")
+        colheitas = []
+    print("Dados carregados!")
+
 
 
 def menu():
+    carregar_json()
+
     while True:
         print("\n=== SISTEMA AGRO ===")
         print("1 - Cadastrar colheita")
@@ -90,4 +112,6 @@ def menu():
             break
         else:
             print("Opção inválida!")
+
+
 menu()
