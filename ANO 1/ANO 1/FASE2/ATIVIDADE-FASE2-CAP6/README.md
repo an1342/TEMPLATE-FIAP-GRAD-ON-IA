@@ -67,7 +67,7 @@ O sistema auxilia na identificação de prejuízos, contribuindo para a tomada d
 
 * Python
 * JSON
-
+  
 ---
 
 **Principais aprendizados:**
