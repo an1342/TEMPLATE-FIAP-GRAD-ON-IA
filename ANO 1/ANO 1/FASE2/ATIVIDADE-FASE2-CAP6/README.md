@@ -26,6 +26,7 @@ Aqui estão organizados:
 * Desenvolver uma solução em Python aplicada ao agronegócio
 * Aplicar estruturas de dados e funções
 * Manipular arquivos em formato JSON
+* Conexão com banco de dados: Oracle
 * Criar um sistema interativo via terminal
 * Resolver um problema real do setor agrícola
 
