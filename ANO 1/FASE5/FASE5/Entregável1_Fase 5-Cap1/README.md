@@ -318,12 +318,20 @@ Nesta seção serão apresentadas as imagens utilizadas para demonstrar as confi
 
 ### Configuração - São Paulo
 
-<img width="1453" height="799" alt="image" src="https://github.com/user-attachments/assets/1f387a49-6c86-40a9-98a9-57541268b921" />
-[ADICIONE AQUI A IMAGEM DA CALCULADORA AWS DE SÃO PAULO]
 
 ### Configuração - Norte da Virgínia
+<img width="1853" height="681" alt="Captura de tela 2026-09-08 232427" src="https://github.com/user-attachments/assets/50afdff6-3ec5-4df2-a0a6-38a083bedef9" />
 
-[ADICIONE AQUI A IMAGEM DA CALCULADORA AWS DA VIRGÍNIA]
+<img width="1855" height="741" alt="Captura de tela 2026-09-08 232450" src="https://github.com/user-attachments/assets/dfc53f98-d11f-4d0c-812c-d8e9e019f7ea" />
+<img width="1854" height="742" alt="Captura de tela 2026-09-08 232503" src="https://github.com/user-attachments/assets/01d21a79-bed6-4863-9b53-61aef2fab314" />
+<img width="1813" height="169" alt="Captura de tela 2026-09-08 232602" src="https://github.com/user-attachments/assets/75946fbb-554f-401e-bb95-65fa86e2a0ec" />
+<img width="1833" height="720" alt="Captura de tela 2026-09-08 232625" src="https://github.com/user-attachments/assets/11000352-c915-40da-9290-f8f4bc1f8ce3" />
+<img width="1453" height="799" alt="Captura de tela 2026-09-08 232640" src="https://github.com/user-attachments/assets/886ab847-5779-40be-bde1-66d41e7706a8" />
+
+
+
+
+
 
 ### Comparação dos custos
 
